@@ -12,5 +12,6 @@ Requirements:
 Make for the makefile  
 well, glibc or something idk-  
 
-Current version: 2.0  
+Current version: 2.1  
 Rewrote code to use a for loop that makes adding flags more modular, and made function return -1 when it fails.  
+2.1: removed stdio.h  

@@ -1,7 +1,6 @@
 #ifndef FLAG_UTILS_H
 #define FLAG_UTILS_H
 
-#include <stdio.h>
 #include <string.h>
 
 int flagch(int argc, char *argv[]) {
