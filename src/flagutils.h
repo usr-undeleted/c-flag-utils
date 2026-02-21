@@ -5,21 +5,25 @@
 #include <string.h>
 
 int flagch(int argc, char *argv[]) {
-	// int used in returns, return 0 if failed, rest is added on
-	int flagVal = 0;
+	// int used in returns, return -1 if failed, rest is added on
+	int flagVal = -1;
+
 	// array that contains all flags used in the project this will be in
 	// starts with -h and --help by default, remove if those are uneeded
-	const static char *pflags[] = {"--help","-h"};
+	const char *pflags[] = {"--help","-h"};
+	const int arrlen = sizeof(pflags) / sizeof(pflags[0]);
 
-	// argc check
-	if (argc != 2) return flagVal;
+	// argc check, returns 0 if there is just one arg
+	if (argc < 2) return flagVal;
 
-	// checks for flags
-	if (strcmp(argv[1], "-h") == 0 || strcmp(argv[1], "--help") == 0) {
-		flagVal = 1;
-		return flagVal;
+	// while loop that compares flag arg to entries in pflags then updates and returns the appropriate flagval
+	for (int i = 0; i < arrlen; i++) {
+		if (strcmp(argv[1], pflags[i]) == 0) {
+			flagVal = i;
+			return flagVal;
+		}
 	}
-	return 0;
+	return flagVal;
 }
 
 #endif
