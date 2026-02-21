@@ -10,3 +10,5 @@ The point of this header is to make flags be globally the same no matter what ty
 Requirements:  
 Make for the makefile  
 well, glibc or something idk-  
+
+Current version: 1.0  
