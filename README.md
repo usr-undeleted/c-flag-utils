@@ -16,3 +16,6 @@ Current version: 2.2
 Rewrote code to use a for loop that makes adding flags more modular, and made function return -1 when it fails.  
 2.1: removed stdio.h  
 2.2: remade comments and renamed function  
+
+Scope for version 3.0:  
+Remake system to have it check for ALL args inputted by user, instead of just argv[1].  
