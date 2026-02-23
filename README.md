@@ -18,3 +18,4 @@ Current version: 3.0
 2.2: remade comments and renamed function  
 3.0: rewrite AGAIN to make every arg be checked, and messed with example code  
 for 3.1: replace malloc with an array (pointer) taken in from the caller  
+3.1: removed memtest since it didnt work and wasnt doing nothing  

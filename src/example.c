@@ -15,15 +15,6 @@ int main (int argc, char *argv[]) {
 		for (int i = 0; i < argc; i++) {
 			printf("Argc %d (%s) returned: %d\n", i, argv[i], arr[i]);
 		}
-
-		/* ^ new func that uses all args, old func below */
-		printf("---\n"); /* cosmetic separator */
-
-		if (argc == 2) { /* can be just argc > 1 */
-			int val = flagchk(argc,argv);
-			printf("Returned argv[1] val:%d\n", val);
-		} else printf("Invalid num of args!\n");
-		return 0;
 }
 
 void fhelp(int argc) { /* help function */
