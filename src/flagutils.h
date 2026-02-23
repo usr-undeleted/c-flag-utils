@@ -29,24 +29,21 @@ int flagchk(int argc, char *argv[]) { /* only checks argv[1]*/
 }
 // ^ old code, should only be used if you want more simplicity. will be kept here because im proud of it <3
 
-int *mapflags(int argc, char *argv[]) { /* make an array in heap memory containing entries, checks all args */
+int *mapflags(int argc, char *argv[], int arr[]) { /* make an array in heap memory containing entries, checks all args */
 	const char *pflags[] = {"--help","-h"};
 	const int tflags = sizeof(pflags) / sizeof(pflags[0]);
 
-	int *map = (int*)malloc(argc * sizeof(int)); /* acts like an array. *map is a pointer, which points the the allocated bytes argc times 4, meaning that two arguments becomes 8, which allocates 8, which becomes 2 because its an int*/
-	if (map == NULL) return NULL; /* incase it fails to allocate */
-
 	for (int i = 0; i < argc; i++) {
-		map[i] = -1; /* by default, entry is -1 as it didnt find a match */
+		arr[i] = -1; /* by default, entry is -1 as it didnt find a match */
 
 		for (int j = 0; j < tflags; j++) { /* j will be the entry of pflags incase there is a match */
 			if (strcmp(argv[i], pflags[j]) == 0) { /* if the entry matches one of the entries inside pflags*/
-				map[i] = j; /* pflags gets translated into an int (j) and then put into map */
+				arr[i] = j; /* pflags gets translated into an int (j) and then put into map */
 				break;
 			}
 		}
 	}
-	return map;
+	return arr;
 }
 
 #endif
