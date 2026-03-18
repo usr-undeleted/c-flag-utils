@@ -1,13 +1,12 @@
-compiling:
-	rm -rf bin binary
-	gcc -I ./ src/*.c
-	mkdir bin
-	mv a.out bin/binary
+.SILENT:
+msg:
+	echo "Pick beetwen 'one' or 'two' for example code."
+
 clean:
-	rm -rf bin
-fancy:
-	rm -rf bin binary
-	gcc -I ./ src/*.c
-	mkdir bin
-	mv a.out bin/binary
-	ln -s bin/binary binary
+	rm -rf bin/*
+
+one:
+	gcc -o ./bin/one -I ./src ./src/example1.c
+
+two:
+	gcc -o ./bin/two -I ./src ./src/example2.c
