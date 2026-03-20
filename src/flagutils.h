@@ -68,6 +68,7 @@ static inline FOUND_FLAGS getflagstruct (int argc, char *argv[], FOUND_FLAGS s) 
 
                 if (argv[i][1] == '\0') { // incase no flag is even inputted
                     s.NO_FLAG = 1;
+                    break;
                 }
 
                 // compare all chars
